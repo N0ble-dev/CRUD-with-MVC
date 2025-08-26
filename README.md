@@ -16,6 +16,8 @@ The API manages an in-memory list of products (generated with [`@faker-js/faker`
 ---
 
 ## 📂 Project Structure
+```bash
+
 src/
 ├─ controllers/ # Route controllers
 │ └─ productController.ts # Handles product-related requests
@@ -26,10 +28,13 @@ src/
 ├─ interfaces/ # TypeScript interfaces
 │ └─ product.ts # Product type definition
 └─ server.ts # Express server entry point
+```
 
 # Run in development
 add ts-node-dev as a devDependency if not already installed
 npm run dev
+
+---
 
 ##  API Documentation
 
