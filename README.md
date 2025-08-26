@@ -17,18 +17,18 @@ The API manages an in-memory list of products (generated with [`@faker-js/faker`
 
 ## 📂 Project Structure
 src/
-├─ controllers/
-│ └─ productController.ts
-├─ services/
-│ └─ productService.ts
-├─ utils/
-│ └─ fakeData.ts
-├─ interfaces/
-│ └─ product.ts
-├─ server.ts
+├─ controllers/ # Route controllers
+│ └─ productController.ts # Handles product-related requests
+├─ services/ # Business logic layer
+│ └─ productService.ts # Product operations (CRUD, filtering, etc.)
+├─ utils/ # Helper functions
+│ └─ fakeData.ts # Generates fake product data
+├─ interfaces/ # TypeScript interfaces
+│ └─ product.ts # Product type definition
+└─ server.ts # Express server entry point
 
 # Run in development
-## add ts-node-dev as a devDependency if not already installed
+add ts-node-dev as a devDependency if not already installed
 npm run dev
 
 ##  API Documentation
