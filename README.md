@@ -69,7 +69,7 @@ Create a new product.
   "price": 12.5,
   "description": "Sample product"
 }
-
+```
 
 ### `PATCH /products/:id`
 Update a product by `id`.
@@ -79,6 +79,6 @@ Update a product by `id`.
 {
   "price": 19.99
 }
-
+```
 ### `DELETE /products/:id`
 DELETE a product by `id`.
