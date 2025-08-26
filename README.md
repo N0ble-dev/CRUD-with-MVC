@@ -41,7 +41,7 @@ interface Product {
   price: number;
   description: string;
 }
-
+```
 ### `GET /products`
 Fetch all products.  
 Supports filtering returned fields via the `filter` query param.
