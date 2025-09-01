@@ -86,4 +86,13 @@ export class ProductController {
       products: this.productService.getAllProducts(),
     });
   }
+  renderProductDetail(req: Request, res: Response) {
+    const id = Number(req.params.id);
+    const product = this.productService.getProductById(id);
+    console.log(product);
+
+    res.render("productDetail", {
+      productData: product,
+    });
+  }
 }

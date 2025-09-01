@@ -22,11 +22,19 @@ let service = new ProductService(products);
 
 let controller = new ProductController(service);
 
-// Routes
+// * Routes
+
+// Product view Routes
 
 app.get("/products", (req, res) => {
   controller.renderProductsList(req, res);
 });
+
+app.get("/products/:id", (req, res) => {
+  controller.renderProductDetail(req, res);
+});
+
+// API Routes
 
 app.get("/api/products", (req, res) => {
   res.send(controller.getData(req, res));
