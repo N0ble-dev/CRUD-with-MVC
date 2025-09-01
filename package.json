@@ -5,20 +5,30 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/server.ts"
+    "dev": "nodemon src/server.ts",
+    "build": "postcss ./src/public/styles/style.css -o ./src/public/styles/output.css --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@tailwindcss/cli": "^4.1.12",
+    "@tailwindcss/vite": "^4.1.12",
     "@types/node": "^24.0.15",
     "express": "^5.1.0",
     "nodemon": "^3.1.10",
+    "pug": "^3.0.3",
     "ts-node": "^10.9.2"
   },
   "devDependencies": {
     "@faker-js/faker": "^9.9.0",
-    "@types/express": "^5.0.3"
+    "@tailwindcss/postcss": "^4.1.12",
+    "@types/express": "^5.0.3",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^4.1.12",
+    "typescript": "^5.9.2"
   }
 }
