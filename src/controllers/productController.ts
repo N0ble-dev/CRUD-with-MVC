@@ -80,4 +80,10 @@ export class ProductController {
       return undefined;
     }
   }
+
+  renderProductsList(req: Request, res: Response) {
+    res.render("index", {
+      products: this.productService.getAllProducts(),
+    });
+  }
 }
