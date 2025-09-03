@@ -27,10 +27,10 @@ export class ProductController {
         .filter((key): key is keyof Product =>
           filteredTypes.includes(key as keyof Product)
         );
-      return this.productService.filterdByQuery(filterKeys);
+      res.send(this.productService.filterdByQuery(filterKeys));
     }
 
-    return this.productService.getAllProducts();
+    res.send(this.productService.getAllProducts());
   };
 
   /*
@@ -79,20 +79,5 @@ export class ProductController {
     } else {
       return undefined;
     }
-  };
-
-  renderProductsList = (req: Request, res: Response) => {
-    res.render("index", {
-      products: this.productService.getAllProducts(),
-    });
-  };
-  renderProductDetail = (req: Request, res: Response) => {
-    const id = Number(req.params.id);
-    const product = this.productService.getProductById(id);
-    console.log(product);
-
-    res.render("productDetail", {
-      productData: product,
-    });
   };
 }
