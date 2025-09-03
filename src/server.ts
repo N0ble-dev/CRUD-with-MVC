@@ -3,6 +3,7 @@ import { fakeUserData } from "./utils/fakeData";
 import { ProductController } from "./controllers/productController";
 import { ProductService } from "./services/productService";
 import path from "path";
+import productsRouter from "./routes/productsRoute";
 const app = express();
 
 app.use(
@@ -36,31 +37,7 @@ app.get("/products/:id", (req, res) => {
 
 // API Routes
 
-app.get("/api/products", (req, res) => {
-  res.send(controller.getData(req, res));
-});
-
-app.get("/products/:id", (req, res) => {
-  res.send(controller.getProductById(req, res));
-});
-
-// create new product
-
-app.post("/api/products", (req, res) => {
-  res.send(controller.createProduct(req, res));
-});
-
-// update product
-
-app.patch("/api/products/:id", (req, res) => {
-  res.send(controller.updateProduct(req, res));
-});
-
-// delete product
-
-app.delete("/api/products/:id", (req, res) => {
-  res.send(controller.deleteProduct(req, res));
-});
+app.use("/api/products", productsRouter);
 
 app.listen(3001, () => {
   console.log("http://localhost:3001");
