@@ -13,7 +13,7 @@ export class ProductController {
    *
    * This method retrieves the filtered product data based on the query parameters.
    */
-  getData(req: Request, res: Response) {
+  getData = (req: Request, res: Response) => {
     const filterQueryParams = req.query.filter as string;
     if (filterQueryParams) {
       const filteredTypes: (keyof Product)[] = [
@@ -31,7 +31,7 @@ export class ProductController {
     }
 
     return this.productService.getAllProducts();
-  }
+  };
 
   /*
 
@@ -41,7 +41,7 @@ export class ProductController {
 
    This method retrieves the product data by ID.
    */
-  getProductById(req: Request, res: Response) {
+  getProductById = (req: Request, res: Response) => {
     const id = Number(req.params.id);
 
     if (id < 30 && !isNaN(id)) {
@@ -51,9 +51,9 @@ export class ProductController {
     } else {
       res.status(404).send("Product not found");
     }
-  }
+  };
 
-  updateProduct(req: Request, res: Response) {
+  updateProduct = (req: Request, res: Response) => {
     const id = Number(req.params.id);
     const key = req.body;
 
@@ -64,29 +64,29 @@ export class ProductController {
     } else {
       res.status(404).send("Product not found");
     }
-  }
+  };
 
-  createProduct(req: Request, res: Response) {
+  createProduct = (req: Request, res: Response) => {
     const newProduct = req.body;
     const allNewProducts = this.productService.createProduct(newProduct);
     return allNewProducts;
-  }
+  };
 
-  deleteProduct(req: Request, res: Response) {
+  deleteProduct = (req: Request, res: Response) => {
     const id = Number(req.params.id);
     if (id < 30 && !isNaN(id)) {
       return this.productService.deleteProductById(id);
     } else {
       return undefined;
     }
-  }
+  };
 
-  renderProductsList(req: Request, res: Response) {
+  renderProductsList = (req: Request, res: Response) => {
     res.render("index", {
       products: this.productService.getAllProducts(),
     });
-  }
-  renderProductDetail(req: Request, res: Response) {
+  };
+  renderProductDetail = (req: Request, res: Response) => {
     const id = Number(req.params.id);
     const product = this.productService.getProductById(id);
     console.log(product);
@@ -94,5 +94,5 @@ export class ProductController {
     res.render("productDetail", {
       productData: product,
     });
-  }
+  };
 }
