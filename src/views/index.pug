@@ -32,10 +32,15 @@ html(lang="en" class="h-full")
             li
               article(class="group relative overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 transition hover:shadow-md")
                 // Banner
-                div(class="h-36 bg-gradient-to-br from-blue-500/90 to-indigo-600/90")
+                div(class="h-36 relative")
+                  img(
+                    src=product.imageURL
+                    alt=product.name
+                    class="h-52 w-full object-cover"
+                  )
                   span(class="absolute right-3 top-3 inline-flex items-center rounded-full bg-white/95 px-3 py-1 text-xs font-semibold shadow")
                     | $
-                    = (typeof product.price === 'number' ? product.price.toFixed(2) : product.price)
+                    = (typeof product.price === 'number' ? product.price.toFixed(2) : productData.price)
 
                 // Body
                 div(class="p-5")

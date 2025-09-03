@@ -16,7 +16,12 @@ html(lang="en" class="h-full")
     main(class="mx-auto max-w-4xl px-4 py-10")
       article(class="rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 overflow-hidden")
         // Banner
-        div(class="h-52 bg-gradient-to-br from-blue-500/90 to-indigo-600/90 flex items-center justify-center")
+        div(class="h-36 relative")
+          img(
+             src=productData.imageURL
+             alt=productData.name
+             class="h-52 w-full object-cover"
+             )
         //-   span(class="rounded-full bg-white/95 px-5 py-2 text-base font-semibold shadow")
         //-     | $ 
         //-     = (typeof productData.price === 'number' ? productData.price.toFixed(2) : productData.price)

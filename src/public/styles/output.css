@@ -283,6 +283,9 @@
   .min-h-full {
     min-height: 100%;
   }
+  .w-full {
+    width: 100%;
+  }
   .max-w-4xl {
     max-width: var(--container-4xl);
   }
@@ -371,6 +374,10 @@
       --tw-gradient-to: color-mix(in oklab, var(--color-indigo-600) 90%, transparent);
     }
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .object-cover {
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .p-5 {
     padding: calc(var(--spacing) * 5);
